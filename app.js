@@ -14,7 +14,7 @@ app.listen (3000, ()=>
 
 
 app.get("/", function(req, res){ 
-    res.sendFile(__dirname + "/views/main/index.html")
-    const rutaCompleta = path.join(__dirname, "/views/main/index.html")
+    res.sendFile(__dirname + "/views/main/index.ejs")
+    const rutaCompleta = path.join(__dirname, "/views/main/index.ejs")
     res.sendFile = (rutaCompleta)
 })

@@ -1,23 +1,13 @@
 const express= require ("express");
 const path= require ("path");
+const userController= require ("../controllers/userControllers")
 
 const router= express.Router();
 
-router.get("/home", function(req, res){ 
-    res.sendFile(path.join(__dirname,'../views/main/home'));
-    //res.send("homeeeeee");
-});
-router.get("/user/about", function(req, res){ 
-        res.sendFile (path.join(__dirname, "./views/main/about"));
-         });
-
-router.get("/not-found", function(req, res){ 
-    res.sendFile (path.join(__dirname, "./main/not-found"));
-     });
-
-router.get("/shopping", function(req, res){ 
-        res.sendFile (path.join(__dirname, "./main/shopping"));
-         });
+router.get("/", userController.home );
+router.get("/about",userController.about);
+router.get("/not-found",userController.notFound);
+router.get("/shopping",userController.shopping);
 
 
 

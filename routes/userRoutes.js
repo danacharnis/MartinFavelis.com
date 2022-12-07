@@ -3,12 +3,12 @@ const path= require ("path");
 
 const router= express.Router();
 
-router.get("/", function(req, res){ 
-    res.sendFile (path.join(__dirname, "../views/main/home.ejs"));
-     });
-
-router.get("/about", function(req, res){ 
-        res.sendFile (path.join(__dirname, "./main/about"));
+router.get("/home", function(req, res){ 
+    res.sendFile(path.join(__dirname,'../views/main/home'));
+    //res.send("homeeeeee");
+});
+router.get("/user/about", function(req, res){ 
+        res.sendFile (path.join(__dirname, "./views/main/about"));
          });
 
 router.get("/not-found", function(req, res){ 
@@ -18,9 +18,6 @@ router.get("/not-found", function(req, res){
 router.get("/shopping", function(req, res){ 
         res.sendFile (path.join(__dirname, "./main/shopping"));
          });
-
-
-
 
 
 
